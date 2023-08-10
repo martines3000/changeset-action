@@ -1,5 +1,11 @@
 # @changesets/action
 
+## 1.5.0
+
+### Minor Changes
+
+- [`1d8a545`](https://github.com/changesets/action/commit/1d8a545e6134b2ec9becde0c25c6b757795b0017) Thanks [@martines3000](https://github.com/martines3000)! - Added support for force publishing
+
 ## 1.4.5
 
 ### Patch Changes
