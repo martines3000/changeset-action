@@ -46,11 +46,13 @@ const getOptionalInput = (name: string) => core.getInput(name) || undefined;
   core.setOutput("publishedPackages", "[]");
   core.setOutput("hasChangesets", String(hasChangesets));
 
+  const forcePublish = core.getBooleanInput("forcePublish");
+
   switch (true) {
     case !hasChangesets && !hasPublishScript:
       core.info("No changesets found");
       return;
-    case !hasChangesets && hasPublishScript: {
+    case forcePublish || (!hasChangesets && hasPublishScript): {
       core.info(
         "No changesets found, attempting to publish any unpublished packages to npm"
       );
